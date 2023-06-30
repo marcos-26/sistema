@@ -34,6 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('/cadastrarClientes', [CadastrarClientes::class, 'cadastrarClientes']);
+Route::post('/cadastrarclientes', [CadastrarClientes::class, 'cadastrarClientes']);
 
 require __DIR__ . '/auth.php';
