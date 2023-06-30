@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\models\Endereco;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,36 +24,26 @@ class Clientes extends Model
         'cpf',
         'email',
         'telefone',
-        'endereco' => null,
+        'endereco',
+        'uf',
     ];
-    public function save(array $options = [])
+
+    public static function factory(): Clientes
     {
-        parent::save();
-        ($this->endereco) ? $this->Endereco()->save($this->endereco) : null;
-    }
-    public function Endereco()
-    {
-        return $this->hasOne(Endereco::class);
+        return app()->make(Clientes::class);
     }
 
-    /**
-     * Get the value of Endereco
-     */
-    public function getEndereco():  ? Endereco
+    public function populate(array $data): self
     {
-        return $this->endereco;
-    }
-
-    /**
-     * Set the value of Endereco
-     *
-     * @return  self
-     */
-    public function setEndereco(Enderecos $endereco)
-    {
-        unset($this->endereco);
-        $this->endereco = $endereco->toArray();
+        $this->cep = $data['nome'] ?? null;
+        $this->logradouro = $data['nascimento'];
+        $this->complemento = $data['cpf'];
+        $this->bairro = $data['email'];
+        $this->localidade = $data['telefone'];
+        $this->ddd = $data['endereco'];
+        $this->uf = $data['uf'];
 
         return $this;
     }
+
 }

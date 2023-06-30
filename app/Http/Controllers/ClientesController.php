@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clientes;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Request;
 
-class CadastrarClientes extends Controller
+class ClientesController extends Controller
 {
 
     public function cadastrarClientes(Request $request)
@@ -22,6 +23,12 @@ class CadastrarClientes extends Controller
         $dados = $request->except('_token');
         $cars = DB::table('cars')->select('*')->where('parametro', '=', $dados['parametro'])->get();
         return view('car.detalhes', compact('cars')); //Crie a view para mostrar os resultados
+    }
+
+    public function Clientes()
+    {
+        $clientes = Clientes::all();
+        return view('clientes', ['clientes' => $clientes]);
     }
 
 }

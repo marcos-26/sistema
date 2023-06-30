@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\CadastrarClientes;
+use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SistemaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +20,7 @@ Route::get('/', function () {
 });
 
 // Clientes
-Route::get('/clientes', [SistemaController::class, 'Clientes'])
+Route::get('/clientes', [ClientesController::class, 'Clientes'])
     ->middleware(['auth', 'verified'])->name('clientes');
 
 Route::get('/dashboard', function () {
@@ -34,6 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('/cadastrarclientes', [CadastrarClientes::class, 'cadastrarClientes']);
+Route::post('/cadastrarclientes', [ClientesController::class, 'cadastrarClientes']);
 
 require __DIR__ . '/auth.php';
