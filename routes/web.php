@@ -23,6 +23,9 @@ Route::get('/', function () {
 Route::get('/clientes', [ClientesController::class, 'Clientes'])
     ->middleware(['auth', 'verified'])->name('clientes');
 
+// Cadastrar Clientes
+Route::post('/cadastrarclientes', [ClientesController::class, 'cadastrarClientes']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -32,7 +35,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::post('/cadastrarclientes', [ClientesController::class, 'cadastrarClientes']);
 
 require __DIR__ . '/auth.php';
