@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CadastrarClientes extends Controller
 {
 
-    public function Dados(Request $request)
+    public function cadastrarClientes(Request $request)
     {
         $base64 = $request->toArray();
 
