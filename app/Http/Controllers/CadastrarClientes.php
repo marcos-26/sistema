@@ -17,4 +17,11 @@ class CadastrarClientes extends Controller
 
     }
 
+    public function busca_detalhe(Request $request)
+    {
+        $dados = $request->except('_token');
+        $cars = DB::table('cars')->select('*')->where('parametro', '=', $dados['parametro'])->get();
+        return view('car.detalhes', compact('cars')); //Crie a view para mostrar os resultados
+    }
+
 }

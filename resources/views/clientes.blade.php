@@ -8,7 +8,7 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
               <a class="nav-link" href="">Cadastrar Clintes</a>
-              <form class="d-flex">
+              <form class="d-flex" {{ url('/dashboard') }}>
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
@@ -66,12 +66,12 @@
         </div>
     </div>
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastarClientes">
     Cadastrar Clintes
   </button>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="cadastarClientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -79,17 +79,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form class="row g-3">
+            <form method="POST" class="row g-3" action="{{ action('ClientesController@searchBy',["nome" => $nome, "situacao" => $situacao]) }}">
                 <div class="col-md-4">
                   <label for="validationServer01" class="form-label">First name</label>
-                  <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                  <input type="text" class="form-control is-valid" id="validationServer01" value="" required>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="validationServer02" class="form-label">Last name</label>
-                  <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                  <input type="text" class="form-control is-valid" id="validationServer02" value="" required>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
@@ -139,15 +139,12 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Submit form</button>
-                </div>
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" type="submit">Cadastrar Cliente</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>
