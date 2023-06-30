@@ -105,12 +105,9 @@
                   <input type="text" class="form-control" name="telefone" id="validationServer05" aria-describedby="validationServer05Feedback" required>
                 </div>
                 <div class="col-md-3">
-                  <label for="validationServer06" class="form-label">UF</label>
-                  <select class="form-select" id="validationServer06" aria-describedby="validationServer06Feedback" name="uf" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
+                    <label for="validationServer07" class="form-label">UF</label>
+                    <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                  </div>
                 <div class="col-md-3">
                   <label for="validationServer07" class="form-label">ENDEREÇO</label>
                   <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
