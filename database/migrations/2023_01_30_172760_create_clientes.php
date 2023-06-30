@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('telefone');
             $table->string('endereco');
+            $table->string('uf');
             $table->timestamps();
         });
     }

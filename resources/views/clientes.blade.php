@@ -29,6 +29,7 @@
                               <th scope="col">Email</th>
                               <th scope="col">Telefone</th>
                               <th scope="col">Endereço</th>
+                              <th scope="col">UF</th>
                               <th></th>
                             </tr>
                           </thead>
@@ -56,6 +57,9 @@
                               <td data-label="Endereço">
                                 <a class="text-current">{{$cliente->endereco}}</a>
                               </td>
+                              <td data-label="Uf">
+                                <a class="text-current">{{$cliente->uf}}</a>
+                              </td>
                             </tr>
                             @endforeach
                           </tbody>
@@ -75,37 +79,41 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Cadastrar-Se</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form method="POST" class="row g-3" action="/cadastrarclientes">
                 <div class="col-md-4">
                   <label for="validationServer01" class="form-label">NOME</label>
-                  <input type="text" class="form-control" id="validationServer01" value="" required>
+                  <input type="text" class="form-control" name="nome" id="validationServer01" value="" required>
                 </div>
                 <div class="col-md-4">
                   <label for="validationServer02" class="form-label">NASCIMENTO</label>
-                  <input type="text" class="form-control" id="validationServer02" value="" required>
+                  <input type="text" class="form-control" name="nascimento" id="validationServer02" value="" required>
                 </div>
                 <div class="col-md-4">
-                    <label for="validationServer02" class="form-label">EMAIL</label>
-                    <input type="text" class="form-control" id="validationServer02" value="" required>
+                    <label for="validationServer03" class="form-label">CPF</label>
+                    <input type="text" class="form-control" name="nascimento" id="validationServer03" value="" required>
+                  </div>
+                <div class="col-md-4">
+                    <label for="validationServer04" class="form-label">EMAIL</label>
+                    <input type="text" class="form-control" name="email" id="validationServer04" value="" required>
                   </div>
                 <div class="col-md-6">
-                  <label for="validationServer03" class="form-label">TELEFONE</label>
-                  <input type="text" class="form-control" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+                  <label for="validationServer05" class="form-label">TELEFONE</label>
+                  <input type="text" class="form-control" name="telefone" id="validationServer05" aria-describedby="validationServer05Feedback" required>
                 </div>
                 <div class="col-md-3">
-                  <label for="validationServer04" class="form-label">UF</label>
-                  <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                  <label for="validationServer06" class="form-label">UF</label>
+                  <select class="form-select" id="validationServer06" aria-describedby="validationServer06Feedback" name="uf" required>
                     <option selected disabled value="">Choose...</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-3">
-                  <label for="validationServer05" class="form-label">ENDEREÇO</label>
-                  <input type="text" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                  <label for="validationServer07" class="form-label">ENDEREÇO</label>
+                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
@@ -118,7 +126,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" type="submit">Cadastrar Cliente</button>
+                <button class="btn btn-primary" type="submit">Cadastrar Cliente</button>
             </div>
         </form>
       </div>
