@@ -81,36 +81,30 @@
         <div class="modal-body">
             <form method="POST" class="row g-3" action="/cadastrarclientes">
                 <div class="col-md-4">
-                  <label for="validationServer01" class="form-label">First name</label>
+                  <label for="validationServer01" class="form-label">NOME</label>
                   <input type="text" class="form-control" id="validationServer01" value="" required>
-
                 </div>
                 <div class="col-md-4">
-                  <label for="validationServer02" class="form-label">Last name</label>
+                  <label for="validationServer02" class="form-label">NASCIMENTO</label>
                   <input type="text" class="form-control" id="validationServer02" value="" required>
-
                 </div>
                 <div class="col-md-4">
-                  <label for="validationServerUsername" class="form-label">Username</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                    <input type="text" class="form-control" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-
+                    <label for="validationServer02" class="form-label">EMAIL</label>
+                    <input type="text" class="form-control" id="validationServer02" value="" required>
                   </div>
-                </div>
                 <div class="col-md-6">
-                  <label for="validationServer03" class="form-label">City</label>
+                  <label for="validationServer03" class="form-label">TELEFONE</label>
                   <input type="text" class="form-control" id="validationServer03" aria-describedby="validationServer03Feedback" required>
                 </div>
                 <div class="col-md-3">
-                  <label for="validationServer04" class="form-label">State</label>
+                  <label for="validationServer04" class="form-label">UF</label>
                   <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" required>
                     <option selected disabled value="">Choose...</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-3">
-                  <label for="validationServer05" class="form-label">Zip</label>
+                  <label for="validationServer05" class="form-label">ENDEREÇO</label>
                   <input type="text" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
                 </div>
                 <div class="col-12">
