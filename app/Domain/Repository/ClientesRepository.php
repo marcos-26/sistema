@@ -2,15 +2,12 @@
 namespace App\Domain\Repository;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CepRepository extends Model
+class ClientesRepository extends Model
 {
-    use SoftDeletes;
-
     protected $private;
 
-    protected $table = 'cep';
+    protected $table = 'clientes';
 
     public function saveOne($data)
     {

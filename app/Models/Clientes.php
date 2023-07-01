@@ -2,31 +2,23 @@
 
 namespace App\Models;
 
+use App\Domain\Repository\ClientesRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Clientes extends Model
+class Clientes extends ClientesRepository
 {
     use HasFactory;
 
     /** @attributes -
-     * $numero
-     * $rua
-     * $complemento
-     * $bairro
+     * $id
+     * $nome
+     * $nascimento
+     * $cpf
+     * $email
+     * $telefone
+     * $endereco
      * $uf
-     * $cidade
      */
-
-    protected $attributes = [
-        'nome',
-        'nascimento',
-        'cpf',
-        'email',
-        'telefone',
-        'endereco',
-        'uf',
-    ];
 
     public static function factory(): Clientes
     {
@@ -35,12 +27,13 @@ class Clientes extends Model
 
     public function populate(array $data): self
     {
-        $this->cep = $data['nome'] ?? null;
-        $this->logradouro = $data['nascimento'];
-        $this->complemento = $data['cpf'];
-        $this->bairro = $data['email'];
-        $this->localidade = $data['telefone'];
-        $this->ddd = $data['endereco'];
+        $this->_id = $data['id'] ?? null;
+        $this->nome = $data['nome'];
+        $this->nascimento = $data['nascimento'];
+        $this->cpf = $data['cpf'];
+        $this->email = $data['email'];
+        $this->telefone = $data['telefone'];
+        $this->endereco = $data['endereco'];
         $this->uf = $data['uf'];
 
         return $this;

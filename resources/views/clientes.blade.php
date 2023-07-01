@@ -94,7 +94,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="validationServer03" class="form-label">CPF</label>
-                    <input type="text" class="form-control" name="nascimento" id="validationServer03" value="" required>
+                    <input type="text" class="form-control" name="cpf" id="validationServer03" value="" required>
                   </div>
                 <div class="col-md-4">
                     <label for="validationServer04" class="form-label">EMAIL</label>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer07" class="form-label">UF</label>
-                    <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                    <input type="text" class="form-control" name="uf" id="validationServer07" aria-describedby="validationServer07Feedback" required>
                   </div>
                 <div class="col-md-3">
                   <label for="validationServer07" class="form-label">ENDEREÇO</label>

@@ -24,7 +24,8 @@ Route::get('/clientes', [ClientesController::class, 'Clientes'])
     ->middleware(['auth', 'verified'])->name('clientes');
 
 // Cadastrar Clientes
-Route::post('/cadastrarclientes', [ClientesController::class, 'cadastrarClientes']);
+Route::post('/cadastrarclientes', [ClientesController::class, 'cadastrarClientes'])
+    ->middleware(['auth', 'verified'])->name('cadastrarclientes');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
