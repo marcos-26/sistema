@@ -16,4 +16,11 @@ class ClientesRepository extends Model
         $this->fill($data);
         $this->save();
     }
+
+    public function getCustomerByName($name)
+    {
+
+        return self::where('nome', 'like', '%' . $name . '%')->get();
+
+    }
 }

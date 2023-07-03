@@ -8,8 +8,8 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
               <a class="nav-link" href="">Cadastrar Clintes</a>
-              <form class="d-flex" {{ url('/dashboard') }}>
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="d-flex" action="/procurarclientes" method="GET">
+                <input class="form-control me-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
             </div>
@@ -20,7 +20,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="table-responsive">
-                        <table class="table table-hover table-nowrap">
+                        <table class="table table-hover table-nowrap" id="search">
                           <thead class="table-light">
                             <tr>
                               <th scope="col">Nome</th>
