@@ -7,7 +7,7 @@
         </h2>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-              <a class="nav-link" href="">Cadastrar Clintes</a>
+              <a class="nav-link" href=""></a>
               <form class="d-flex" action="/procurarclientes" method="GET">
                 <input class="form-control me-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
@@ -16,7 +16,11 @@
           </nav>
     </x-slot>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+         <!-- Button trigger modal -->
+         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastarClientes">
+                Cadastrar Clintes
+            </button>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="table-responsive">
@@ -69,10 +73,7 @@
             </div>
         </div>
     </div>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastarClientes">
-    Cadastrar Clintes
-  </button>
+
 
   <!-- Modal -->
   <div class="modal fade" id="cadastarClientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
