@@ -48,7 +48,8 @@ class ClientesController extends Controller
     {
         $name = request('search');
         $search = Clientes::factory()->getCustomerByName($name);
-        return json_encode($search);
+        return view('clientes', ['search' => $search]);
+
     }
 
 }
