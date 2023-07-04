@@ -9,8 +9,8 @@
             <div class="container-fluid">
               <a class="nav-link" href=""></a>
               <form class="d-flex" action="/procurarclientes" method="GET">
-                <input class="form-control me-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" name="search" id="search" type="search" placeholder="Pesquisa" aria-label="Search">
+                <button class="btn btn-outline-success" type="Pesquisa">Search</button>
               </form>
             </div>
           </nav>
@@ -24,56 +24,54 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="table-responsive">
-                        <table class="table table-hover table-nowrap" id="search">
-                          <thead class="table-light">
-                            <tr>
-                              <th scope="col">Nome</th>
-                              <th scope="col">Nascimento</th>
-                              <th scope="col">Cpf</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">Telefone</th>
-                              <th scope="col">Endereço</th>
-                              <th scope="col">UF</th>
-                              <th></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            @foreach ($clientes as $cliente)
-                            <tr>
-                              <td data-label="Job Title">
-                                <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                <a class="text-heading font-semibold" href="#">
-                                    {{$cliente->nome}}
-                                </a>
-                              </td>
-                              <td data-label="Nascimento">
-                                <span>{{$cliente->nascimento}}</span>
-                              </td>
-                              <td data-label="Cpf">
-                                <a class="text-current">{{$cliente->cpf}}</a>
-                              </td>
-                              <td data-label="Email">
-                                <a class="text-current">{{$cliente->email}}</a>
-                              </td>
-                              <td data-label="Telefone">
-                                <span class="badge bg-soft-success text-success">{{$cliente->telefone}}</span>
-                              </td>
-                              <td data-label="Endereço">
-                                <a class="text-current">{{$cliente->endereco}}</a>
-                              </td>
-                              <td data-label="Uf">
-                                <a class="text-current">{{$cliente->uf}}</a>
-                              </td>
-                            </tr>
-                            @endforeach
-                          </tbody>
-                        </table>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Nascimento</th>
+                                    <th scope="col">Cpf</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Endereço</th>
+                                    <th scope="col">UF</th>
+                                    <th></th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($clientes as $cliente)
+                                <tr>
+                                    <td data-label="Job Title">
+                                    <a class="text-heading font-semibold" href="#">
+                                        {{$cliente->nome}}
+                                    </a>
+                                    </td>
+                                    <td data-label="Nascimento">
+                                    <span>{{$cliente->nascimento}}</span>
+                                    </td>
+                                    <td data-label="Cpf">
+                                    <a class="text-current">{{$cliente->cpf}}</a>
+                                    </td>
+                                    <td data-label="Email">
+                                    <a class="text-current">{{$cliente->email}}</a>
+                                    </td>
+                                    <td data-label="Telefone">
+                                    <span class="badge bg-soft-success text-success">{{$cliente->telefone}}</span>
+                                    </td>
+                                    <td data-label="Endereço">
+                                    <a class="text-current">{{$cliente->endereco}}</a>
+                                    </td>
+                                    <td data-label="Uf">
+                                    <a class="text-current">{{$cliente->uf}}</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                          </table>
                       </div>
                 </div>
             </div>
         </div>
     </div>
-
 
   <!-- Modal -->
   <div class="modal fade" id="cadastarClientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
