@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ClientesController extends Controller
 {
-
     public function cadastrarClientes(Request $request)
     {
         $base64 = $request->toArray();
@@ -39,7 +38,6 @@ class ClientesController extends Controller
 
     public function Clientes()
     {
-
         $clientes = Clientes::all();
         return view('clientes', ['clientes' => $clientes]);
     }
@@ -49,7 +47,6 @@ class ClientesController extends Controller
         $name = request('search');
         $search = Clientes::factory()->getCustomerByName($name);
         return view('clientes', ['search' => $search]);
-
     }
 
 }
