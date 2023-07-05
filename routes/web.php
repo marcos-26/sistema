@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,7 +36,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/contact', [ClientesController::class, 'procurarClientes'])
+Route::get('/contact', [ContactController::class, 'contact'])
     ->middleware(['auth', 'verified'])->name('contact');
 
 Route::middleware('auth')->group(function () {

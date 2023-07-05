@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Domain\Repository\ContactRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Contact extends ContactRepository
@@ -10,6 +11,8 @@ class Contact extends ContactRepository
 
     /** @attributes -
      * $id
+     * $nome
+     * $msg
      */
 
     public static function factory(): Contact
@@ -20,6 +23,8 @@ class Contact extends ContactRepository
     public function populate(array $data): self
     {
         $this->_id = $data['id'] ?? null;
+        $this->nome = $data['nome'];
+        $this->msg = $data['msg'];
 
         return $this;
     }
@@ -44,4 +49,44 @@ class Contact extends ContactRepository
         return $this;
     }
 
+
+     /**
+      * Get the value of nome
+      */
+     public function getNome()
+     {
+          return $this->nome;
+     }
+
+     /**
+      * Set the value of nome
+      *
+      * @return  self
+      */
+     public function setNome($nome)
+     {
+          $this->nome = $nome;
+
+          return $this;
+     }
+
+     /**
+      * Get the value of msg
+      */
+     public function getMsg()
+     {
+          return $this->msg;
+     }
+
+     /**
+      * Set the value of msg
+      *
+      * @return  self
+      */
+     public function setMsg($msg)
+     {
+          $this->msg = $msg;
+
+          return $this;
+     }
 }
