@@ -9,6 +9,6 @@ class ContactController extends Controller
     public function Contact()
     {
         $contact = Contact::all();
-        return view('contact', ['contact' => $contact]);
+        return view('contato', ['contato' => $contact]);
     }
 }

@@ -30,8 +30,8 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
-                        {{ __('Contact') }}
+                    <x-nav-link :href="route('contato')" :active="request()->routeIs('contato')">
+                        {{ __('Contato') }}
                     </x-nav-link>
                 </div>
 

@@ -5,22 +5,22 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Clientes') }}
         </h2>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="nav-link" href=""></a>
-              <form class="d-flex" action="/procurarclientes" method="GET">
-                <input class="form-control me-2" name="search" id="search" type="search" placeholder="Pesquisa" aria-label="Search">
-                <button class="btn btn-outline-success" type="Pesquisa">Search</button>
-              </form>
-            </div>
-          </nav>
     </x-slot>
     <div class="py-12">
          <!-- Button trigger modal -->
          <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastarClientes">
-                Cadastrar Clintes
-            </button>
+            <nav class="navbar">
+                <div class="container-fluid">
+                  {{-- <a class="nav-link" href=""></a> --}}
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastarClientes">
+                    Cadastrar Clintes
+                </button>
+                  <form class="d-flex" action="/procurarclientes" method="GET">
+                    <input class="form-control me-2" name="search" id="search" type="search" placeholder="Pesquisa" aria-label="Search">
+                    <button class="btn btn-outline-success" type="Pesquisa">Search</button>
+                  </form>
+                </div>
+              </nav>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="table-responsive">
@@ -140,6 +140,10 @@
                 <div class="col-md-3">
                   <label for="validationServer07" class="form-label">ENDEREÇO</label>
                   <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                </div>
+                <div class="mb-3">
+                    <input type="file" class="form-control" aria-label="file example" required>
+                    <div class="invalid-feedback">Example invalid form file feedback</div>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
