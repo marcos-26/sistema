@@ -5,15 +5,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <style>
-        .chart-container {
-            position: relative;
-            height: 300px;
-            margin-top: 20px;
-        }
-    </style>
     <div class="container mt-4">
-        <h1>Dashboard</h1>
         <div class="row">
             <div class="col-lg-3 mb-4">
                 <div class="card text-center">
