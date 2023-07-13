@@ -10,6 +10,12 @@ class Sale extends SaleRepository
 {
     use HasFactory;
 
+    /** @attributes -
+     * $id
+     * $vendas
+     * $vendedor
+     */
+
     public static function factory(): Sale
     {
         return app()->make(Sale::class);
@@ -22,4 +28,44 @@ class Sale extends SaleRepository
         $this->relatorio = $data['vendedor'];
         return $this;
     }
+
+     /**
+      * Get the value of vendas
+      */
+     public function getVendas()
+     {
+          return $this->vendas;
+     }
+
+     /**
+      * Set the value of vendas
+      *
+      * @return  self
+      */
+     public function setVendas($vendas)
+     {
+          $this->vendas = $vendas;
+
+          return $this;
+     }
+
+     /**
+      * Get the value of vendedor
+      */
+     public function getVendedor()
+     {
+          return $this->vendedor;
+     }
+
+     /**
+      * Set the value of vendedor
+      *
+      * @return  self
+      */
+     public function setVendedor($vendedor)
+     {
+          $this->vendedor = $vendedor;
+
+          return $this;
+     }
 }
