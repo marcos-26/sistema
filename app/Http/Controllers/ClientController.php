@@ -39,14 +39,14 @@ class ClientController extends Controller
     public function Clientes()
     {
         $clientes = Client::all();
-        return view('clientes', ['clientes' => $clientes]);
+        return view('cliente', ['clientes' => $clientes]);
     }
 
     public function procurarClientes()
     {
         $name = request('search');
         $search = Client::factory()->getCustomerByName($name);
-        return view('clientes', ['search' => $search]);
+        return view('cliente', ['search' => $search]);
     }
 
 }

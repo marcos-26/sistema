@@ -20,17 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Clientes
-Route::get('/clientes', [ClientController::class, 'Clientes'])
-    ->middleware(['auth', 'verified'])->name('clientes');
 
-// Cadastrar Clientes
-Route::post('/cadastrarclientes', [ClientController::class, 'cadastrarClientes'])
-    ->middleware(['auth', 'verified'])->name('cadastrarclientes');
 
-// Procurar Clientes
-Route::get('/procurarclientes', [ClientController::class, 'procurarClientes'])
-    ->middleware(['auth', 'verified'])->name('procurarclientes');
+// // Clientes
+require __DIR__ . '/client_routes.php';
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
