@@ -22,16 +22,15 @@ Route::get('/', function () {
 
 
 
-// // Clientes
+// Clientes
 require __DIR__ . '/client_routes.php';
 
+// Contato
+require __DIR__ . '/contact_routes.php';
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/contato', [ContactController::class, 'contact'])
-    ->middleware(['auth', 'verified'])->name('contato');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
