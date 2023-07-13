@@ -26,6 +26,18 @@ require __DIR__ . '/client_routes.php';
 // Contato
 require __DIR__ . '/contact_routes.php';
 
+// Contato
+require __DIR__ . '/lead_routes.php';
+
+// Contato
+require __DIR__ . '/sale_routes.php';
+
+// Contato
+require __DIR__ . '/config_routes.php';
+
+// Contato
+require __DIR__ . '/report_routes.php';
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
