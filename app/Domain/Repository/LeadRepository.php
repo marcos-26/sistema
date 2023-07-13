@@ -3,7 +3,7 @@ namespace App\Domain\Repository;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ContactRepository extends Model
+class LeadRepository extends Model
 {
     protected $private;
 

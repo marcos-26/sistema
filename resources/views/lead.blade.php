@@ -11,74 +11,32 @@
                 <table class="table" id="search">
                     <thead>
                         <tr>
+                            <th scope="col">ID</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Nascimento</th>
-                            <th scope="col">Cpf</th>
                             <th scope="col">Email</th>
                             <th scope="col">Telefone</th>
-                            <th scope="col">Endereço</th>
-                            <th scope="col">UF</th>
                             <th></th>
                           </tr>
                     </thead>
                     <tbody>
-                        @if (isset($search))
-                        @foreach ($search as $cliente)
+                        @foreach ($lead as $leads)
                         <tr>
-                            <td data-label="Job Title">
+                            <td data-label="Id">
                             <a class="text-heading font-semibold" href="#">
-                                {{$cliente->nome}}
+                                {{$leads->id}}
                             </a>
                             </td>
-                            <td data-label="Nascimento">
-                            <span>{{$cliente->nascimento}}</span>
-                            </td>
-                            <td data-label="Cpf">
-                            <a class="text-current">{{$cliente->cpf}}</a>
+                            <td data-label="Nome">
+                            <span>{{$leads->nome}}</span>
                             </td>
                             <td data-label="Email">
-                            <a class="text-current">{{$cliente->email}}</a>
+                            <a class="text-current">{{$leads->email}}</a>
                             </td>
                             <td data-label="Telefone">
-                            <span class="badge bg-soft-success text-success">{{$cliente->telefone}}</span>
-                            </td>
-                            <td data-label="Endereço">
-                            <a class="text-current">{{$cliente->endereco}}</a>
-                            </td>
-                            <td data-label="Uf">
-                            <a class="text-current">{{$cliente->uf}}</a>
+                            <a class="text-current">{{$leads->telefone}}</a>
                             </td>
                         </tr>
                         @endforeach
-                        @else
-                         @foreach ($clientes as $cliente)
-                         <tr>
-                             <td data-label="Job Title">
-                             <a class="text-heading font-semibold" href="#">
-                                 {{$cliente->nome}}
-                             </a>
-                             </td>
-                             <td data-label="Nascimento">
-                             <span>{{$cliente->nascimento}}</span>
-                             </td>
-                             <td data-label="Cpf">
-                             <a class="text-current">{{$cliente->cpf}}</a>
-                             </td>
-                             <td data-label="Email">
-                             <a class="text-current">{{$cliente->email}}</a>
-                             </td>
-                             <td data-label="Telefone">
-                             <span class="badge bg-soft-success text-success">{{$cliente->telefone}}</span>
-                             </td>
-                             <td data-label="Endereço">
-                             <a class="text-current">{{$cliente->endereco}}</a>
-                             </td>
-                             <td data-label="Uf">
-                             <a class="text-current">{{$cliente->uf}}</a>
-                             </td>
-                         </tr>
-                         @endforeach
-                       @endif
                     </tbody>
                   </table>
               </div>
