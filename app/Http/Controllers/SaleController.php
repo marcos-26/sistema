@@ -8,6 +8,7 @@ class SaleController extends Controller
 {
     public function sale()
     {
-        return view('venda');
+        $venda = Sale::all();
+        return view('venda', ['vendas' => $venda]);
     }
 }

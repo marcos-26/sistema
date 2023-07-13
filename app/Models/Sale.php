@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Domain\Repository\SaleRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sale extends Model
+class Sale extends SaleRepository
 {
     use HasFactory;
 
@@ -17,8 +18,8 @@ class Sale extends Model
     public function populate(array $data): self
     {
         $this->id = $data['id'] ?? null;
-        $this->relatorio = $data['relatorio'];
-        $this->relatorio = $data['cliente'];
+        $this->relatorio = $data['vendas'];
+        $this->relatorio = $data['vendedor'];
         return $this;
     }
 }

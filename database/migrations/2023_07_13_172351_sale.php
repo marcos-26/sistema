@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('relatorio', function (Blueprint $table) {
             $table->id();
-            $table->string('relatorio');
-            $table->string('cliente');
+            $table->string('vendas');
+            $table->string('vendedor');
         });
     }
 
