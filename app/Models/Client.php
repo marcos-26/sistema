@@ -20,14 +20,14 @@ class Client extends ClientRepository
      * $uf
      */
 
-    public static function factory(): Clientes
+    public static function factory(): Client
     {
-        return app()->make(Clientes::class);
+        return app()->make(Client::class);
     }
 
     public function populate(array $data): self
     {
-        $this->_id = $data['id'] ?? null;
+        $this->id = $data['id'] ?? null;
         $this->nome = $data['nome'];
         $this->nascimento = $data['nascimento'];
         $this->cpf = $data['cpf'];

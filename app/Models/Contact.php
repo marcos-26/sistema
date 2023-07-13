@@ -22,7 +22,7 @@ class Contact extends ContactRepository
 
     public function populate(array $data): self
     {
-        $this->_id = $data['id'] ?? null;
+        $this->id = $data['id'] ?? null;
         $this->nome = $data['nome'];
         $this->msg = $data['msg'];
 
