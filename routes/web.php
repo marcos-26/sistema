@@ -20,8 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 // Clientes
 require __DIR__ . '/client_routes.php';
 
