@@ -2,5 +2,5 @@
 
 use App\Http\Controllers\SaleController;
 
-Route::get('/vendas', [SaleController::class, 'lead'])
+Route::get('/vendas', [SaleController::class, 'sale'])
 ->middleware(['auth', 'verified'])->name('vendas');
