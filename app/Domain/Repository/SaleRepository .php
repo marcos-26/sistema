@@ -7,5 +7,5 @@ class ContactRepository extends Model
 {
     protected $private;
 
-    protected $table = 'contatos';
+    protected $table = 'Vendas';
 }

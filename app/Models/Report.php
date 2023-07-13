@@ -9,6 +9,12 @@ class Report extends Model
 {
     use HasFactory;
 
+     /** @attributes -
+     * $id
+     * $relatorio
+     * $cliente
+     */
+
     public static function factory(): Report
     {
         return app()->make(Report::class);
@@ -18,6 +24,7 @@ class Report extends Model
     {
         $this->id = $data['id'] ?? null;
         $this->relatorio = $data['relatorio'];
+        $this->relatorio = $data['cliente'];
         return $this;
     }
 }
