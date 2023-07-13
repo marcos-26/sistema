@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -21,15 +21,15 @@ Route::get('/', function () {
 });
 
 // Clientes
-Route::get('/clientes', [ClientesController::class, 'Clientes'])
+Route::get('/clientes', [ClientController::class, 'Clientes'])
     ->middleware(['auth', 'verified'])->name('clientes');
 
 // Cadastrar Clientes
-Route::post('/cadastrarclientes', [ClientesController::class, 'cadastrarClientes'])
+Route::post('/cadastrarclientes', [ClientController::class, 'cadastrarClientes'])
     ->middleware(['auth', 'verified'])->name('cadastrarclientes');
 
 // Procurar Clientes
-Route::get('/procurarclientes', [ClientesController::class, 'procurarClientes'])
+Route::get('/procurarclientes', [ClientController::class, 'procurarClientes'])
     ->middleware(['auth', 'verified'])->name('procurarclientes');
 
 Route::get('/dashboard', function () {

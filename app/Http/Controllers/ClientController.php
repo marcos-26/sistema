@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clientes;
+use App\Models\Client;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Request;
 
-class ClientesController extends Controller
+class ClientController extends Controller
 {
     public function cadastrarClientes(Request $request)
     {
@@ -22,7 +22,7 @@ class ClientesController extends Controller
         $endereco = $base64['endereco'];
         $uf = $base64['uf'];
 
-        $clienteRepository = Clientes::factory();
+        $clienteRepository = Client::factory();
         $clienteRepository->saveOne([
             'nome' => $nome,
             'nascimento' => $nascimento,
@@ -38,14 +38,14 @@ class ClientesController extends Controller
 
     public function Clientes()
     {
-        $clientes = Clientes::all();
+        $clientes = Client::all();
         return view('clientes', ['clientes' => $clientes]);
     }
 
     public function procurarClientes()
     {
         $name = request('search');
-        $search = Clientes::factory()->getCustomerByName($name);
+        $search = Client::factory()->getCustomerByName($name);
         return view('clientes', ['search' => $search]);
     }
 

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Domain\Repository\ClientesRepository;
+use App\Domain\Repository\ClientRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Clientes extends ClientesRepository
+class Client extends ClientRepository
 {
     use HasFactory;
 

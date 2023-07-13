@@ -3,7 +3,7 @@ namespace App\Domain\Repository;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ClientesRepository extends Model
+class ClientRepository extends Model
 {
     protected $private;
 
