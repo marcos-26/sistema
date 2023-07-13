@@ -7,5 +7,5 @@ class SaleRepository extends Model
 {
     protected $private;
 
-    protected $table = 'Vendas';
+    protected $table = 'vendas';
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Domain\Repository\ReportRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
