@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
-use Illuminate\Http\Request;
 
 class LeadController extends Controller
 {
     public function lead()
     {
-        $lead = Lead::all();
-        return view('lead', ['lead' => $lead]);
+        $leads = Lead::all();
+        $paginate = Lead::paginate();
+        return view('lead', compact('leads', 'paginate'));
     }
 }
