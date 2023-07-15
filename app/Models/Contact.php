@@ -12,6 +12,7 @@ class Contact extends ContactRepository
     /** @attributes -
      * $id
      * $nome
+     * $email
      * $msg
      */
 
@@ -24,6 +25,7 @@ class Contact extends ContactRepository
     {
         $this->id = $data['id'] ?? null;
         $this->nome = $data['nome'];
+        $this->nome = $data['email'];
         $this->msg = $data['msg'];
 
         return $this;
@@ -85,6 +87,26 @@ class Contact extends ContactRepository
     public function setMsg($msg)
     {
         $this->msg = $msg;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set the value of email
+     *
+     * @return  self
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
 
         return $this;
     }
