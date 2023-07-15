@@ -7,10 +7,10 @@
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-dark overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="table-responsive">
-                        <table class="table" id="search">
+                        <table class="table table-dark table-hover" id="search">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
@@ -43,10 +43,10 @@
                         </table>
                     </div>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        {{ $paginate->links() }}
-                    </div>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $paginate->links() }}
             </div>
         </div>
     </div>

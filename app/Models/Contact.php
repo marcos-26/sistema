@@ -49,44 +49,43 @@ class Contact extends ContactRepository
         return $this;
     }
 
+    /**
+     * Get the value of nome
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
 
-     /**
-      * Get the value of nome
-      */
-     public function getNome()
-     {
-          return $this->nome;
-     }
+    /**
+     * Set the value of nome
+     *
+     * @return  self
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
 
-     /**
-      * Set the value of nome
-      *
-      * @return  self
-      */
-     public function setNome($nome)
-     {
-          $this->nome = $nome;
+        return $this;
+    }
 
-          return $this;
-     }
+    /**
+     * Get the value of msg
+     */
+    public function getMsg()
+    {
+        return $this->msg;
+    }
 
-     /**
-      * Get the value of msg
-      */
-     public function getMsg()
-     {
-          return $this->msg;
-     }
+    /**
+     * Set the value of msg
+     *
+     * @return  self
+     */
+    public function setMsg($msg)
+    {
+        $this->msg = $msg;
 
-     /**
-      * Set the value of msg
-      *
-      * @return  self
-      */
-     public function setMsg($msg)
-     {
-          $this->msg = $msg;
-
-          return $this;
-     }
+        return $this;
+    }
 }
