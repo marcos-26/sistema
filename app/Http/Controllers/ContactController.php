@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\Request;
 
 class ContactController extends Controller
 {
@@ -19,22 +21,16 @@ class ContactController extends Controller
         Log::debug(json_encode($base64));
 
         $nome = $base64['nome'];
-        $nascimento = $base64['nascimento'];
-        $cpf = $base64['cpf'];
         $email = $base64['email'];
-        $telefone = $base64['telefone'];
-        $endereco = $base64['endereco'];
-        $uf = $base64['uf'];
+        $msg = $base64['msg'];
 
-        $clienteRepository = Client::factory();
+        $clienteRepository = Contact::factory();
         $clienteRepository->saveOne([
             'nome' => $nome,
-            'nascimento' => $nascimento,
-            'cpf' => $cpf,
             'email' => $email,
-            'telefone' => $telefone,
-            'endereco' => $endereco,
-            'uf' => $uf,
+            'msg' => $msg,
         ]);
+
+        return back()->with('message', 'Contato Enviado com Sucesso!');
     }
 }

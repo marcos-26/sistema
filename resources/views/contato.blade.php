@@ -21,8 +21,14 @@
                     <label for="exampleFormControlTextarea1" class="form-label">Diga-nos como entrou em contato</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
               </form>
+              <br>
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
