@@ -100,6 +100,22 @@
                       </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+                {{ $paginate->links() }}
+            </div>
+            <br>
+            @if ($errors->any())
+            <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+            </ul>
+            @endif
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+            @endif
         </div>
     </div>
 
@@ -115,7 +131,12 @@
             <form method="POST" class="row g-3" action="/cadastrarclientes">
                 <div class="col-md-4">
                   <label for="validationServer01" class="form-label">NOME</label>
-                  <input type="text" class="form-control" name="nome" id="validationServer01" value="" required>
+                  <input type="text" class="form-control" name="nome" id="validationServer01" @error('name') @enderror value="" required>
+                  @error('name')
+                  <div class= 'invalid-feedback'>
+                  {{$message}}
+                  </div>
+                  @enderror
                 </div>
                 <div class="col-md-4">
                   <label for="validationServer02" class="form-label">NASCIMENTO</label>

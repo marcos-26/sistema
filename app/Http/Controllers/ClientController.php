@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidationRequest;
 use App\Models\Client;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Request;
 
 class ClientController extends Controller
 {
-    public function cadastrarClientes(Request $request)
+    public function cadastrarClientes(ValidationRequest $request)
     {
         $base64 = $request->toArray();
 
@@ -33,13 +34,14 @@ class ClientController extends Controller
             'uf' => $uf,
         ]);
 
-        return redirect('/clientes');
+        return back()->with('message', 'Cliente Cadastrado com Sucesso!');
     }
 
     public function Clientes()
     {
         $clientes = Client::all();
-        return view('cliente', ['clientes' => $clientes]);
+        $paginate = Client::paginate(5);
+        return view('cliente', compact('clientes', 'paginate'));
     }
 
     public function procurarClientes()

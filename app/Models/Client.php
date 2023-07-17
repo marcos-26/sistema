@@ -28,13 +28,13 @@ class Client extends ClientRepository
     public function populate(array $data): self
     {
         $this->id = $data['id'] ?? null;
-        $this->nome = $data['nome'];
-        $this->nascimento = $data['nascimento'];
-        $this->cpf = $data['cpf'];
-        $this->email = $data['email'];
-        $this->telefone = $data['telefone'];
-        $this->endereco = $data['endereco'];
-        $this->uf = $data['uf'];
+        (isset($data['nome'])) ? $this->nome = $data['nome'] ?? '' : null;
+        (isset($data['nascimento'])) ? $this->nascimento = $data['nascimento'] ?? '' : null;
+        (isset($data['cpf'])) ? $this->cpf = $data['cpf'] ?? '' : null;
+        (isset($data['email'])) ? $this->email = $data['email'] ?? '' : null;
+        (isset($data['telefone'])) ? $this->telefone = $data['telefone'] ?? '' : null;
+        (isset($data['endereco'])) ? $this->endereco = $data['endereco'] ?? '' : null;
+        (isset($data['uf'])) ? $this->uf = $data['uf'] ?? '' : null;
 
         return $this;
     }
