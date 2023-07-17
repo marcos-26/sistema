@@ -127,7 +127,7 @@
                   </div>
                 <div class="col-md-4">
                     <label for="validationServer04" class="form-label">EMAIL</label>
-                    <input type="text" class="form-control" name="email" id="validationServer04" value="" required>
+                    <input type="email" class="form-control" name="email" id="validationServer04" value="" required>
                   </div>
                 <div class="col-md-6">
                   <label for="validationServer05" class="form-label">TELEFONE</label>
@@ -140,10 +140,6 @@
                 <div class="col-md-3">
                   <label for="validationServer07" class="form-label">ENDEREÇO</label>
                   <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
-                </div>
-                <div class="mb-3">
-                    <input type="file" class="form-control" aria-label="file example" required>
-                    <div class="invalid-feedback">Example invalid form file feedback</div>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
