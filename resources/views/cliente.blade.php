@@ -15,7 +15,7 @@
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastarClientes">
                     Cadastrar Clintes
                 </button>
-                  <form class="d-flex" action="/procurarclientes" method="GET">
+                  <form class="d-flex">
                     <input class="form-control me-2" name="search" id="search" type="search" placeholder="Pesquisa" aria-label="Search">
                     <button class="btn btn-outline-success" type="Pesquisa">Search</button>
                   </form>

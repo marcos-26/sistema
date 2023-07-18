@@ -37,18 +37,25 @@ class ClientController extends Controller
         return back()->with('message', 'Cliente Cadastrado com Sucesso!');
     }
 
-    public function Clientes()
+    public function clientes()
     {
+        // todos os clientes
         $clientes = Client::all();
+
+        // paginação
         $paginate = Client::paginate(5);
-        return view('cliente', compact('clientes', 'paginate'));
+
+        // search
+        $name = request('search');
+        $search = $this->procurarClientes($name);
+
+        return view('cliente', compact('clientes', 'paginate', 'search'));
     }
 
-    public function procurarClientes()
+    private function procurarClientes($name)
     {
-        $name = request('search');
         $search = Client::factory()->getCustomerByName($name);
-        return view('cliente', ['search' => $search]);
+        return $search;
     }
 
 }

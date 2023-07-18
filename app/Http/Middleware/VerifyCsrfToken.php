@@ -14,7 +14,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         //
         'http://127.0.0.1:8000/cadastrarclientes',
-        'http://127.0.0.1:8000/procurarclientes',
         'http://127.0.0.1:8000/enviacontato',
     ];
 }
