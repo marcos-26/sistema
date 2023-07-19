@@ -16,5 +16,6 @@ class VerifyCsrfToken extends Middleware
         'http://127.0.0.1:8000/cadastrarclientes',
         'http://127.0.0.1:8000/enviacontato',
         'http://127.0.0.1:8000/cadastrarleads',
+        'http://127.0.0.1:8000/cadastrarrelatorio',
     ];
 }

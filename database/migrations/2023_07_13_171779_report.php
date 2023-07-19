@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('relatorios', function (Blueprint $table) {
             $table->id();
+            $table->string('funcionario');
+            $table->string('comentario');
             $table->string('relatorio');
-            $table->string('cliente');
             $table->timestamps();
         });
     }
