@@ -12,15 +12,15 @@
                     <form method="POST" class="row g-3" action="/cadastrarleads">
                         <div class="col-md-3">
                           <label for="inputPassword4" class="form-label">Nome</label>
-                          <input type="text" class="form-control" id="inputPassword4" name="nome">
+                          <input type="text" class="form-control" id="nome" name="nome" required>
                         </div>
                         <div class="col-md-3">
                           <label for="inputEmail4" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="inputEmail4" name="email">
+                          <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="col-md-3">
                           <label for="inputAddress" class="form-label">Telefone</label>
-                          <input type="text" class="form-control" id="inputAddress" name="telefone">
+                          <input type="text" class="form-control" id="telefone" name="telefone" required>
                         </div>
                         <div class="col-md-6">
                           <button type="submit" class="btn btn-primary">Sign in</button>
