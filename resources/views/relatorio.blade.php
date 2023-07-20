@@ -1,9 +1,11 @@
 <x-app-layout>
     @include('menu.bootstrap')
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Relatório') }}
         </h2>
+
     </x-slot>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -37,32 +39,34 @@
                                         <th scope="col">Relatório</th>
                                         <th></th>
                                     </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($relatorio as $relatorios)
-                            <tr>
-                                <td data-label="ID">
-                                    <a class="text-heading font-semibold" href="#">
-                                        {{$relatorios->id}}
-                                    </a>
-                                </td>
-                                <td data-label="Nome">
-                                    <a class="text-current">{{$relatorios->funcionario}}</a>
-                                </td>
-                                <td data-label="Comentario">
-                                    <span>{{$relatorios->comentario}}</span>
-                                </td>
-                                <td data-label="Relatorio">
-                                    <span>{{$relatorios->relatorio}}</span>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($relatorio as $relatorios)
+                                    <tr>
+                                        <td data-label="ID">
+                                            <a class="text-heading font-semibold" href="#">
+                                                {{$relatorios->id}}
+                                            </a>
+                                        </td>
+                                        <td data-label="Nome">
+                                            <a class="text-current">{{$relatorios->funcionario}}</a>
+                                        </td>
+                                        <td data-label="Comentario">
+                                            <span>{{$relatorios->comentario}}</span>
+                                        </td>
+                                        <td data-label="Relatorio">
+                                            <span>{{$relatorios->relatorio}}</span>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="d-flex justify-content-center">
+                                {{ $paginate->links() }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
     </x-app-layout>
