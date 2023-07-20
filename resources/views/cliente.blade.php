@@ -32,7 +32,7 @@
                                     <th scope="col">Cpf</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Telefone</th>
-                                    <th scope="col">Endereço</th>
+                                    <th scope="col">Bairro</th>
                                     <th scope="col">UF</th>
                                     <th></th>
                                   </tr>
@@ -58,8 +58,8 @@
                                     <td data-label="Telefone">
                                     <span class="badge bg-soft-success text-success">{{$cliente->telefone}}</span>
                                     </td>
-                                    <td data-label="Endereço">
-                                    <a class="text-current">{{$cliente->endereco}}</a>
+                                    <td data-label="Bairro">
+                                    <a class="text-current">{{$cliente->bairro}}</a>
                                     </td>
                                     <td data-label="Uf">
                                     <a class="text-current">{{$cliente->uf}}</a>
@@ -140,39 +140,39 @@
                 </div>
                 <div class="col-md-4">
                   <label for="validationServer02" class="form-label">NASCIMENTO</label>
-                  <input type="date" class="form-control" name="nascimento" id="validationServer02" value="" required>
+                  <input type="date" class="form-control" name="nascimento" id="nascimento" value="" required>
                 </div>
                 <div class="col-md-4">
                     <label for="validationServer03" class="form-label">CPF</label>
-                    <input type="text" class="form-control" name="cpf" id="validationServer03" value="" required>
+                    <input type="text" class="form-control" name="cpf" id="cpf" value="" required>
                   </div>
                 <div class="col-md-6">
                     <label for="validationServer04" class="form-label">EMAIL</label>
-                    <input type="email" class="form-control" name="email" id="validationServer04" value="" required>
+                    <input type="email" class="form-control" name="email" id="email" value="" required>
                   </div>
                 <div class="col-md-6">
                   <label for="validationServer05" class="form-label">TELEFONE</label>
-                  <input type="text" class="form-control" name="telefone" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                  <input type="text" class="form-control" name="telefone" id="telefone" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <label for="validationServer07" class="form-label">CEP</label>
-                    <input type="text" class="form-control" name="cep" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                    <input type="text" class="form-control" name="cep" id="cep" onblur="completeAddress()" required>
                   </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                   <label for="validationServer07" class="form-label">RUA</label>
-                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                  <input type="text" class="form-control" name="logradouro" id="rua" aria-describedby="validationServer07Feedback" required>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-4">
                   <label for="validationServer07" class="form-label">COMPLEMENTO</label>
-                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                  <input type="text" class="form-control" name="complemento" id="complemento" aria-describedby="validationServer07Feedback" placeholder="referência">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-4">
                   <label for="validationServer07" class="form-label">BAIRRO</label>
-                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                  <input type="text" class="form-control" name="bairro" id="bairro" aria-describedby="validationServer07Feedback" required>
                 </div>
                 <div class="col-md-3">
                     <label for="validationServer07" class="form-label">UF</label>
-                    <input type="text" class="form-control" name="uf" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                    <input type="text" class="form-control" name="uf" id="uf" aria-describedby="validationServer07Feedback" required>
                   </div>
                 <div class="col-12">
                   <div class="form-check">
@@ -192,3 +192,19 @@
     </div>
   </div>
 </x-app-layout>
+
+<script>
+    function completeAddress() {
+        const cep = document.getElementById('cep').value;
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('rua').value = data.logradouro;
+                document.getElementById('complemento').value = data.complemento;
+                document.getElementById('bairro').value = data.bairro;
+                document.getElementById('uf').value = data.uf;
+            })
+            .catch(error => console.error('Erro:', error));
+    }
+</script>

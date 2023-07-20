@@ -20,7 +20,10 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('email');
             $table->string('telefone');
-            $table->string('endereco');
+            $table->string('cep');
+            $table->string('logradouro');
+            $table->string('complemento');
+            $table->string('bairro');
             $table->string('uf');
             $table->timestamps();
         });

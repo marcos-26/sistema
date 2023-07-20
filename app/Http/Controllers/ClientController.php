@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\Integration\ViaCepIntegration;
 use App\Http\Requests\ValidationRequest;
 use App\Models\Client;
 use Illuminate\Support\Facades\Log;
@@ -12,16 +11,20 @@ class ClientController extends Controller
 {
     public function cadastrarClientes(ValidationRequest $request)
     {
-        $base64 = $request->toArray();
+        $data = $request->toArray();
 
-        Log::debug(json_encode($base64));
+        Log::debug(json_encode($data));
 
-        $nome = $base64['nome'];
-        $nascimento = $base64['nascimento'];
-        $cpf = $base64['cpf'];
-        $email = $base64['email'];
-        $telefone = $base64['telefone'];
-        $uf = $base64['uf'];
+        $nome = $data['nome'];
+        $nascimento = $data['nascimento'];
+        $cpf = $data['cpf'];
+        $email = $data['email'];
+        $telefone = $data['telefone'];
+        $cep = $data['cep'];
+        $logradouro = $data['logradouro'];
+        $complemento = $data['complemento'];
+        $bairro = $data['bairro'];
+        $uf = $data['uf'];
 
         $clienteRepository = Client::factory();
         $clienteRepository->saveOne([
@@ -30,6 +33,11 @@ class ClientController extends Controller
             'cpf' => $cpf,
             'email' => $email,
             'telefone' => $telefone,
+            'cep' => $cep,
+            'logradouro' => $logradouro,
+            'complemento' => $complemento,
+            'bairro' => $bairro,
+            'uf' => $uf,
         ]);
 
         return back()->with('message', 'Cliente Cadastrado com Sucesso!');
@@ -54,34 +62,6 @@ class ClientController extends Controller
     {
         $search = Client::factory()->getCustomerByName($name);
         return $search;
-    }
-
-    private function consultaCep($cep)
-    {
-        $consultaCep = ViaCepIntegration::consultarCEP($cep);
-
-        Log::debug('Save biometry ' . $cep);
-
-        if (strlen($cep) != 8) {
-            return response()->json([
-                'Mensagem' => 'Falta Caracteres No Campo Cep',
-            ], 400);
-        }
-
-        $cepRepository = Client::factory();
-        $cepRepository->saveOne([
-            'cep' => $cep,
-            'logradouro' => $consultaCep['logradouro'],
-            'complemento' => $consultaCep['complemento'],
-            'bairro' => $consultaCep['bairro'],
-            'uf' => $consultaCep['uf'],
-        ]);
-
-        if (empty($consultaCep)) {
-            return response()->json([
-                'Mensagem' => 'Cep Inexistente ',
-            ], 400);
-        }
     }
 
 }
