@@ -18,8 +18,8 @@ class LeadController extends Controller
         $email = $base64['email'];
         $telefone = $base64['telefone'];
 
-        $clienteRepository = Lead::factory();
-        $clienteRepository->saveOne([
+        $leadRepository = Lead::factory();
+        $leadRepository->saveOne([
             'nome' => $nome,
             'email' => $email,
             'telefone' => $telefone,
@@ -31,7 +31,7 @@ class LeadController extends Controller
     public function lead()
     {
         $leads = Lead::all();
-        $paginate = Lead::paginate(5);
+        $paginate = Lead::paginate(1);
         return view('lead', compact('leads', 'paginate'));
     }
 }

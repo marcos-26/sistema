@@ -19,8 +19,8 @@ class ReportController extends Controller
         $comentario = $base64['comentario'];
         $relatorio = $base64['relatorio'];
 
-        $clienteRepository = Report::factory();
-        $clienteRepository->saveOne([
+        $reportRepository = Report::factory();
+        $reportRepository->saveOne([
             'funcionario' => $funcionario,
             'comentario' => $comentario,
             'relatorio' => $relatorio,
@@ -32,6 +32,7 @@ class ReportController extends Controller
     public function report()
     {
         $relatorio = Report::all();
-        return view('relatorio', ['relatorio' => $relatorio]);
+        $paginate = Report::paginate(1);
+        return view('relatorio', compact('relatorio', 'paginate'));
     }
 }

@@ -24,8 +24,8 @@ class ContactController extends Controller
         $email = $base64['email'];
         $msg = $base64['msg'];
 
-        $clienteRepository = Contact::factory();
-        $clienteRepository->saveOne([
+        $contactRepository = Contact::factory();
+        $contactRepository->saveOne([
             'nome' => $nome,
             'email' => $email,
             'msg' => $msg,

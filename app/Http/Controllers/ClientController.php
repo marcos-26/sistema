@@ -43,7 +43,7 @@ class ClientController extends Controller
         $clientes = Client::all();
 
         // paginação
-        $paginate = Client::paginate(5);
+        $paginate = Client::paginate(1);
 
         // search
         $name = request('search');
