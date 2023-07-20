@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,17 +25,20 @@ require __DIR__ . '/client_routes.php';
 // Contato
 require __DIR__ . '/contact_routes.php';
 
-// Contato
+// Lead
 require __DIR__ . '/lead_routes.php';
 
-// Contato
+// Sale
 require __DIR__ . '/sale_routes.php';
 
-// Contato
+// Config
 require __DIR__ . '/config_routes.php';
 
-// Contato
+// Report
 require __DIR__ . '/report_routes.php';
+
+// Integração Cep
+Route::get('/consultaCpf/{cep}', [ClientController::class, 'consultaCep']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

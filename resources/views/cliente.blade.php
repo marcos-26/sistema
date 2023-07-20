@@ -155,18 +155,30 @@
                   <input type="text" class="form-control" name="telefone" id="validationServer05" aria-describedby="validationServer05Feedback" required>
                 </div>
                 <div class="col-md-3">
+                    <label for="validationServer07" class="form-label">CEP</label>
+                    <input type="text" class="form-control" name="cep" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                  </div>
+                <div class="col-md-9">
+                  <label for="validationServer07" class="form-label">RUA</label>
+                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                </div>
+                <div class="col-md-9">
+                  <label for="validationServer07" class="form-label">COMPLEMENTO</label>
+                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                </div>
+                <div class="col-md-9">
+                  <label for="validationServer07" class="form-label">BAIRRO</label>
+                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
+                </div>
+                <div class="col-md-3">
                     <label for="validationServer07" class="form-label">UF</label>
                     <input type="text" class="form-control" name="uf" id="validationServer07" aria-describedby="validationServer07Feedback" required>
                   </div>
-                <div class="col-md-9">
-                  <label for="validationServer07" class="form-label">ENDEREÇO</label>
-                  <input type="text" class="form-control" name="endereco" id="validationServer07" aria-describedby="validationServer07Feedback" required>
-                </div>
                 <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
                     <label class="form-check-label" for="invalidCheck3">
-                      Agree to terms and conditions
+                      Concordo com os termos.
                     </label>
                   </div>
                 </div>

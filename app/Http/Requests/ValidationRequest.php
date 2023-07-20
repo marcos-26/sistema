@@ -28,8 +28,6 @@ class ValidationRequest extends FormRequest
             'cpf' => 'required',
             'email' => 'required',
             'telefone' => 'required',
-            'endereco' => 'required',
-            'uf' => 'required',
         ];
     }
 
@@ -41,8 +39,6 @@ class ValidationRequest extends FormRequest
             'cpf.required' => 'O campo cpf é obrigatório',
             'email.required' => 'O campo email é obrigatório',
             'telefone.required' => 'O campo telefone é obrigatório',
-            'endereco.required' => 'O campo endereco é obrigatório',
-            'uf.required' => 'O campo uf é obrigatório',
         ];
     }
 }

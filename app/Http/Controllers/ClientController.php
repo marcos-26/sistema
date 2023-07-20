@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Integration\ViaCepIntegration;
 use App\Http\Requests\ValidationRequest;
 use App\Models\Client;
 use Illuminate\Support\Facades\Log;
@@ -20,7 +21,6 @@ class ClientController extends Controller
         $cpf = $base64['cpf'];
         $email = $base64['email'];
         $telefone = $base64['telefone'];
-        $endereco = $base64['endereco'];
         $uf = $base64['uf'];
 
         $clienteRepository = Client::factory();
@@ -30,8 +30,6 @@ class ClientController extends Controller
             'cpf' => $cpf,
             'email' => $email,
             'telefone' => $telefone,
-            'endereco' => $endereco,
-            'uf' => $uf,
         ]);
 
         return back()->with('message', 'Cliente Cadastrado com Sucesso!');
@@ -56,6 +54,44 @@ class ClientController extends Controller
     {
         $search = Client::factory()->getCustomerByName($name);
         return $search;
+    }
+
+    public function consultaCep($cep)
+    {
+        $consultaCep = ViaCepIntegration::consultarCEP($cep);
+
+        Log::debug('Save biometry ' . $cep);
+
+        if (strlen($cep) != 8) {
+            return response()->json([
+                'Mensagem' => 'Falta Caracteres No Campo Cep',
+            ], 400);
+        }
+
+        $cepRepository = Cep::factory();
+        $cepRepository->saveOne([
+            'cep' => $cep,
+            'logradouro' => $consultaCep['logradouro'],
+            'complemento' => $consultaCep['complemento'],
+            'bairro' => $consultaCep['bairro'],
+            'uf' => $consultaCep['uf'],
+        ]);
+
+        if (empty($consultaCep)) {
+            return response()->json([
+                'Mensagem' => 'Cep Inexistente ',
+            ], 400);
+        }
+
+        return response()->json([
+            'cep' => $cepRepository->getCep(),
+            'logradouro' => $cepRepository->getlogradouro(),
+            'complemento' => $cepRepository->getComplemento(),
+            'bairro' => $cepRepository->getBairro(),
+            'localidade' => $cepRepository->getLocalidade(),
+            'uf' => $cepRepository->getUf(),
+            'ddd' => $cepRepository->getDdd(),
+        ], 200);
     }
 
 }

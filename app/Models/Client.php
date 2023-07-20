@@ -16,7 +16,6 @@ class Client extends ClientRepository
      * $cpf
      * $email
      * $telefone
-     * $endereco
      * $uf
      */
 
@@ -33,7 +32,6 @@ class Client extends ClientRepository
         (isset($data['cpf'])) ? $this->cpf = $data['cpf'] ?? '' : null;
         (isset($data['email'])) ? $this->email = $data['email'] ?? '' : null;
         (isset($data['telefone'])) ? $this->telefone = $data['telefone'] ?? '' : null;
-        (isset($data['endereco'])) ? $this->endereco = $data['endereco'] ?? '' : null;
         (isset($data['uf'])) ? $this->uf = $data['uf'] ?? '' : null;
 
         return $this;
