@@ -56,7 +56,7 @@ class ClientController extends Controller
         return $search;
     }
 
-    public function consultaCep($cep)
+    private function consultaCep($cep)
     {
         $consultaCep = ViaCepIntegration::consultarCEP($cep);
 
@@ -68,7 +68,7 @@ class ClientController extends Controller
             ], 400);
         }
 
-        $cepRepository = Cep::factory();
+        $cepRepository = Client::factory();
         $cepRepository->saveOne([
             'cep' => $cep,
             'logradouro' => $consultaCep['logradouro'],
@@ -82,16 +82,6 @@ class ClientController extends Controller
                 'Mensagem' => 'Cep Inexistente ',
             ], 400);
         }
-
-        return response()->json([
-            'cep' => $cepRepository->getCep(),
-            'logradouro' => $cepRepository->getlogradouro(),
-            'complemento' => $cepRepository->getComplemento(),
-            'bairro' => $cepRepository->getBairro(),
-            'localidade' => $cepRepository->getLocalidade(),
-            'uf' => $cepRepository->getUf(),
-            'ddd' => $cepRepository->getDdd(),
-        ], 200);
     }
 
 }

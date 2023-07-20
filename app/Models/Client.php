@@ -16,6 +16,10 @@ class Client extends ClientRepository
      * $cpf
      * $email
      * $telefone
+     * $cep
+     * $logradouro
+     * $complemento
+     * $bairro
      * $uf
      */
 
@@ -32,6 +36,10 @@ class Client extends ClientRepository
         (isset($data['cpf'])) ? $this->cpf = $data['cpf'] ?? '' : null;
         (isset($data['email'])) ? $this->email = $data['email'] ?? '' : null;
         (isset($data['telefone'])) ? $this->telefone = $data['telefone'] ?? '' : null;
+        (isset($data['cep'])) ? $this->cep = $data['cep'] ?? '' : null;
+        (isset($data['logradouro'])) ? $this->logradouro = $data['logradouro'] ?? '' : null;
+        (isset($data['complemento'])) ? $this->complemento = $data['complemento'] ?? '' : null;
+        (isset($data['bairro'])) ? $this->bairro = $data['bairro'] ?? '' : null;
         (isset($data['uf'])) ? $this->uf = $data['uf'] ?? '' : null;
 
         return $this;
@@ -158,26 +166,6 @@ class Client extends ClientRepository
     }
 
     /**
-     * Get the value of endereco
-     */
-    public function getEndereco()
-    {
-        return $this->endereco;
-    }
-
-    /**
-     * Set the value of endereco
-     *
-     * @return  self
-     */
-    public function setEndereco($endereco)
-    {
-        $this->endereco = $endereco;
-
-        return $this;
-    }
-
-    /**
      * Get the value of uf
      */
     public function getUf()
@@ -193,6 +181,86 @@ class Client extends ClientRepository
     public function setUf($uf)
     {
         $this->uf = $uf;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cep
+     */
+    public function getCep()
+    {
+        return $this->cep;
+    }
+
+    /**
+     * Set the value of cep
+     *
+     * @return  self
+     */
+    public function setCep($cep)
+    {
+        $this->cep = $cep;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of logradouro
+     */
+    public function getLogradouro()
+    {
+        return $this->logradouro;
+    }
+
+    /**
+     * Set the value of logradouro
+     *
+     * @return  self
+     */
+    public function setLogradouro($logradouro)
+    {
+        $this->logradouro = $logradouro;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of complemento
+     */
+    public function getComplemento()
+    {
+        return $this->complemento;
+    }
+
+    /**
+     * Set the value of complemento
+     *
+     * @return  self
+     */
+    public function setComplemento($complemento)
+    {
+        $this->complemento = $complemento;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of bairro
+     */
+    public function getBairro()
+    {
+        return $this->bairro;
+    }
+
+    /**
+     * Set the value of bairro
+     *
+     * @return  self
+     */
+    public function setBairro($bairro)
+    {
+        $this->bairro = $bairro;
 
         return $this;
     }
